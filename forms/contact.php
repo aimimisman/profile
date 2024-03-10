@@ -1,46 +1,43 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Collect and sanitize input
     $name = strip_tags(trim($_POST["name"]));
     $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
     $subject = strip_tags(trim($_POST["subject"]));
     $message = trim($_POST["message"]);
 
-    // Check that data was sent to the mailer.
-    if ( empty($name) OR empty($subject) OR empty($message) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    // Verify data
+    if (empty($name) || !filter_var($email, FILTER_VALIDATE_EMAIL) || empty($subject) || empty($message)) {
         // Set a 400 (bad request) response code and exit.
         http_response_code(400);
-        echo "Oops! There was a problem with your submission. Please complete the form and try again.";
+        echo "Please complete the form and try again.";
         exit;
     }
 
-    // Set the recipient email address.
-    $recipient = "aimi.misman@outlook.com"; // REPLACE WITH YOUR EMAIL
+    // Recipient email
+    $recipient = "your_email_address@example.com"; // CHANGE this to your actual email address where you want to receive form submissions
 
-    // Set the email subject.
-    $email_subject = "New contact from $name: $subject";
-
-    // Build the email content.
+    // Build the email content
     $email_content = "Name: $name\n";
     $email_content .= "Email: $email\n\n";
     $email_content .= "Message:\n$message\n";
 
-    // Build the email headers.
+    // Email headers
     $email_headers = "From: $name <$email>";
 
-    // Send the email.
-    if (mail($recipient, $email_subject, $email_content, $email_headers)) {
-        // Set a 200 (okay) response code.
+    // Send the email
+    if (mail($recipient, $subject, $email_content, $email_headers)) {
+        // Set a 200 (OK) response code.
         http_response_code(200);
         echo "Thank You! Your message has been sent.";
     } else {
-        // Set a 500 (internal server error) response code.
+        // If mail couldn't be sent, set a 500 (internal server error) response code.
         http_response_code(500);
-        echo "Oops! Something went wrong and we couldn't send your message.";
+        echo "Oops! Something went wrong, and we couldn't send your message.";
     }
-
 } else {
-    // Not a POST request, set a 403 (forbidden) response code.
+    // If not a POST request, set a 403 (forbidden) response code.
     http_response_code(403);
-    echo "There was a problem with your submission, please try again.";
+    echo "There was a problem with your submission. Please try again.";
 }
 ?>
