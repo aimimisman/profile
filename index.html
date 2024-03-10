@@ -169,9 +169,7 @@
                     <li>
                       <i class="bi bi-chevron-right"></i>
                       <strong>City:</strong>
-                      <span>
-                        Kuala Lumpur, Malaysia
-                      </span>
+                      <span> Kuala Lumpur, Malaysia </span>
                     </li>
                   </ul>
                 </div>
@@ -953,8 +951,8 @@
                 </div>
               </div>
               -->
-              <!-- End testimonial item -->
-              <!--
+      <!-- End testimonial item -->
+      <!--
 
               <div class="swiper-slide">
                 <div class="testimonial-item">
@@ -976,8 +974,8 @@
                 </div>
               </div>
               -->
-              <!-- End testimonial item -->
-              <!--
+      <!-- End testimonial item -->
+      <!--
 
               <div class="swiper-slide">
                 <div class="testimonial-item">
@@ -998,8 +996,8 @@
                 </div>
               </div>
               -->
-              <!-- End testimonial item -->
-              <!--
+      <!-- End testimonial item -->
+      <!--
 
               <div class="swiper-slide">
                 <div class="testimonial-item">
@@ -1021,8 +1019,8 @@
                 </div>
               </div>
               -->
-              <!-- End testimonial item -->
-              <!--
+      <!-- End testimonial item -->
+      <!--
 
               <div class="swiper-slide">
                 <div class="testimonial-item">
@@ -1044,8 +1042,8 @@
                 </div>
               </div>
               -->
-              <!-- End testimonial item -->
-              <!-- 
+      <!-- End testimonial item -->
+      <!-- 
             </div>
             <div class="swiper-pagination"></div>
           </div>
@@ -1053,113 +1051,147 @@
       </section>
       -->
       <!-- End Testimonials Section -->
-      
 
-     <!-- ======= Contact Section ======= -->
-<section id="contact" class="contact">
-  <div class="container" data-aos="fade-up">
-    <div class="section-title">
-      <h2>Contact</h2>
-    </div>
-
-    <div class="row mt-1">
-      <div class="col-lg-4">
-        <div class="info">
-          <div class="address">
-            <i class="bi bi-geo-alt"></i>
-            <h4>Location:</h4>
-            <p>Kuala Lumpur, Malaysia</p>
+      <!-- ======= Contact Section ======= -->
+      <section id="contact" class="contact">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <h2>Contact</h2>
           </div>
 
-          <div class="email">
-            <i class="bi bi-envelope"></i>
-            <h4>Email:</h4>
-            <p>aimi.misman@outlook.com</p>
-          </div>
+          <div class="row mt-1">
+            <div class="col-lg-4">
+              <div class="info">
+                <div class="address">
+                  <i class="bi bi-geo-alt"></i>
+                  <h4>Location:</h4>
+                  <p>Kuala Lumpur, Malaysia</p>
+                </div>
 
-          <div class="phone">
-            <i class="bi bi-phone"></i>
-            <h4>Call:</h4>
-            <p>+60 192584291</p>
+                <div class="email">
+                  <i class="bi bi-envelope"></i>
+                  <h4>Email:</h4>
+                  <p>aimi.misman@outlook.com</p>
+                </div>
+
+                <div class="phone">
+                  <i class="bi bi-phone"></i>
+                  <h4>Call:</h4>
+                  <p>+60 192584291</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-8 mt-5 mt-lg-0">
+              <form
+                action="https://formspree.io/f/xgegzloe"
+                method="POST"
+                role="form"
+                class="php-email-form"
+              >
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <input
+                      type="text"
+                      name="name"
+                      class="form-control"
+                      id="name"
+                      placeholder="Your Name"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6 form-group mt-3 mt-md-0">
+                    <input
+                      type="email"
+                      class="form-control"
+                      name="_replyto"
+                      id="email"
+                      placeholder="Your Email"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="form-group mt-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="subject"
+                    id="subject"
+                    placeholder="Subject"
+                    required
+                  />
+                </div>
+                <div class="form-group mt-3">
+                  <textarea
+                    class="form-control"
+                    name="message"
+                    rows="5"
+                    placeholder="Message"
+                    required
+                  ></textarea>
+                </div>
+                <div class="my-3">
+                  <div class="loading">Loading</div>
+                  <div class="error-message" style="display: none"></div>
+                  <div class="sent-message" style="display: none">
+                    Your message has been sent. Thank you!
+                  </div>
+                </div>
+                <div class="text-center">
+                  <button type="submit">Send Message</button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          var form = document.querySelector(".php-email-form");
+          form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            var formData = new FormData(form);
 
-      <div class="col-lg-8 mt-5 mt-lg-0">
-        <form action="https://formspree.io/f/xgegzloe" method="POST" role="form" class="php-email-form">
-          <div class="row">
-            <div class="col-md-6 form-group">
-              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-            </div>
-            <div class="col-md-6 form-group mt-3 mt-md-0">
-              <input type="email" class="form-control" name="_replyto" id="email" placeholder="Your Email" required>
-            </div>
-          </div>
-          <div class="form-group mt-3">
-            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-          </div>
-          <div class="form-group mt-3">
-            <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-          </div>
-          <div class="my-3">
-            <div class="loading">Loading</div>
-            <div class="error-message" style="display: none;"></div>
-            <div class="sent-message" style="display: none;">Your message has been sent. Thank you!</div>
-          </div>
-          <div class="text-center"><button type="submit">Send Message</button></div>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var form = document.querySelector(".php-email-form");
-    form.addEventListener("submit", function(e) {
-      e.preventDefault();
-      var formData = new FormData(form);
-      var object = {};
-      formData.forEach(function(value, key){
-          object[key] = value;
-      });
-      var json = JSON.stringify(object);
+            // Display loading message
+            var loadingElement = document.querySelector(".loading");
+            var errorMessageElement = document.querySelector(".error-message");
+            var sentMessageElement = document.querySelector(".sent-message");
+            loadingElement.style.display = "block";
+            errorMessageElement.style.display = "none";
+            sentMessageElement.style.display = "none";
 
-      fetch(form.action, {
-        method: "POST",
-        headers: {
-          'Accept': 'application/json',
-          "Content-Type": "application/json"
-        },
-        body: json
-      }).then(response => {
-        if (response.ok) {
-          document.querySelector(".loading").style.display = "none";
-          document.querySelector(".error-message").style.display = "none";
-          document.querySelector(".sent-message").style.display = "block";
-          form.reset();
-        } else {
-          document.querySelector(".loading").style.display = "none";
-          document.querySelector(".error-message").style.display = "block";
-          document.querySelector(".sent-message").style.display = "none";
-          response.json().then(data => {
-            if(data.errors) {
-              var errorMessage = data.errors.map(error => error.message).join(", ");
-              document.querySelector(".error-message").textContent = errorMessage;
-            }
+            fetch(form.action, {
+              method: "POST",
+              body: formData,
+              headers: {
+                Accept: "application/json",
+              },
+            })
+              .then((response) => {
+                loadingElement.style.display = "none"; // Hide loading element
+                if (response.ok) {
+                  sentMessageElement.style.display = "block";
+                  errorMessageElement.style.display = "none";
+                  form.reset(); // Reset form fields
+                } else {
+                  sentMessageElement.style.display = "none";
+                  errorMessageElement.style.display = "block";
+                  errorMessageElement.textContent =
+                    "Oops! Something went wrong, please try again.";
+                }
+              })
+              .catch((error) => {
+                loadingElement.style.display = "none"; // Hide loading element
+                sentMessageElement.style.display = "none";
+                errorMessageElement.style.display = "block";
+                errorMessageElement.textContent =
+                  "There was a problem with your submission. Please try again.";
+              });
           });
-        }
-      }).catch(error => {
-        document.querySelector(".loading").style.display = "none";
-        document.querySelector(".error-message").style.display = "block";
-        document.querySelector(".sent-message").style.display = "none";
-        document.querySelector(".error-message").textContent = "There was a problem with your submission. Please try again.";
-      });
-    });
-  });
-</script>
-<!-- End Contact Section -->
+        });
+      </script>
 
-
+      <!-- End Contact Section -->
     </main>
     <!-- End #main -->
 
@@ -1167,9 +1199,7 @@
     <footer id="footer">
       <div class="container">
         <h3>Aimi Misman</h3>
-        <p>
-          Last but not least, STAY HYDRATED BESTIES! xx
-        </p>
+        <p>Last but not least, STAY HYDRATED BESTIES! xx</p>
         <div class="social-links">
           <a href="https://www.instagram.com/aimizaff/" class="instagram"
             ><i class="bx bxl-instagram"></i
