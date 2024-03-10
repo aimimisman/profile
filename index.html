@@ -1152,14 +1152,6 @@
             e.preventDefault();
             var formData = new FormData(form);
 
-            // Display loading message
-            var loadingElement = document.querySelector(".loading");
-            var errorMessageElement = document.querySelector(".error-message");
-            var sentMessageElement = document.querySelector(".sent-message");
-            loadingElement.style.display = "block";
-            errorMessageElement.style.display = "none";
-            sentMessageElement.style.display = "none";
-
             fetch(form.action, {
               method: "POST",
               body: formData,
@@ -1167,25 +1159,34 @@
                 Accept: "application/json",
               },
             })
-              .then((response) => {
-                loadingElement.style.display = "none"; // Hide loading element
-                if (response.ok) {
-                  sentMessageElement.style.display = "block";
-                  errorMessageElement.style.display = "none";
-                  form.reset(); // Reset form fields
+              .then((response) => response.json()) // Convert the response to JSON
+              .then((responseJson) => {
+                if (responseJson.ok) {
+                  // If Formspree response is OK, display the success message
+                  document.querySelector(".loading").style.display = "none";
+                  document.querySelector(".error-message").style.display =
+                    "none";
+                  document.querySelector(".sent-message").style.display =
+                    "block";
+                  form.reset(); // Reset the form fields
                 } else {
-                  sentMessageElement.style.display = "none";
-                  errorMessageElement.style.display = "block";
-                  errorMessageElement.textContent =
-                    "Oops! Something went wrong, please try again.";
+                  // If any error from Formspree, display the error message
+                  document.querySelector(".loading").style.display = "none";
+                  document.querySelector(".error-message").style.display =
+                    "block";
+                  document.querySelector(".sent-message").style.display =
+                    "none";
                 }
               })
               .catch((error) => {
-                loadingElement.style.display = "none"; // Hide loading element
-                sentMessageElement.style.display = "none";
-                errorMessageElement.style.display = "block";
-                errorMessageElement.textContent =
+                // Handle any errors that occurred during fetch
+                console.error("Error:", error);
+                document.querySelector(".loading").style.display = "none";
+                document.querySelector(".error-message").textContent =
                   "There was a problem with your submission. Please try again.";
+                document.querySelector(".error-message").style.display =
+                  "block";
+                document.querySelector(".sent-message").style.display = "none";
               });
           });
         });
